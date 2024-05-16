@@ -5,7 +5,7 @@ let result = null;
 let op = '';
 
 // Get all calculator buttons
-const buttons = document.querySelectorAll('.calculator .buttons button');
+const buttons = document.querySelectorAll('.calculator .buttons .key');
 
 // Get result div
 const immediateInput = document.querySelector('#immediate-input');
@@ -24,6 +24,9 @@ buttons.forEach(btn => btn.addEventListener('click', (e) => {
     if (['+', '-', '*', '/', '='].includes(key)) {
 
         // Restrictions
+        if (key === '=' && expression.textContent === '') {
+            return;
+        }
         if (expression.textContent[expression.textContent.length - 1] === '=' && key === '=') {
             return
         }
