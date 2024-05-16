@@ -56,8 +56,6 @@ buttons.forEach(btn => btn.addEventListener('click', (e) => {
             immediateInput.textContent = result;
             expression.textContent += key;
         }
-        // Last operator
-        console.log(expression.textContent[expression.textContent.length - 1])
     }
     // Number/Decimal input
     else {
@@ -67,15 +65,17 @@ buttons.forEach(btn => btn.addEventListener('click', (e) => {
                 return;
             }
         }
-
         // New calculation
         if (result !== null && op === '') {
             clearVars();
             immediateInput.textContent = '';
         }
-        // Remove initial zero or 
-        if (immediateInput.textContent == '0' || result !== null) {
+        else if (result !== null) {
             result = null;
+            immediateInput.textContent = '';
+        }
+        // Remove initial zero
+        if (immediateInput.textContent == '0') {
             immediateInput.textContent = '';
             expression.textContent = '';
         }

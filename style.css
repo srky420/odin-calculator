@@ -15,6 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: gray;
 }
 
 .container {
@@ -25,6 +26,8 @@ body {
 .calculator {
     padding: 0.5rem;
     width: 20rem;
+    border: 1px solid black;
+    background-color: lightslategray;
 }
 
 .calculator .result {
@@ -35,6 +38,7 @@ body {
     height: 8rem;
     overflow-y: auto;
     word-wrap: break-word;
+    background-color: white;
 }
 
 #immediate-input {
@@ -51,8 +55,6 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
-    border: 1px solid;
-    padding: 0.5rem;
 }
 
 .calculator .buttons button {
@@ -62,9 +64,18 @@ body {
 }
 
 .calculator .buttons button:hover {
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(200, 200, 200) !important;
+}
+
+.calculator .buttons button:active {
+    background-color: rgb(230, 230, 230) !important;
+}
+
+.op {
+    background-color: lightblue;
 }
 
 #clear-screen {
     grid-column: span 4;
+    background-color: indianred;
 }
